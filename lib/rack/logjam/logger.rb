@@ -6,6 +6,7 @@ module Rack
     class Logger
 
       def log_request( env )
+        _logger.debug("logjam!: #{env.inspect}")
         _logger.info <<-end_info
 #{ANSI.cyan { '--- HTTP Request ---' }}
 Headers: #{ANSI.magenta { request_log_data( env ).inspect }}
